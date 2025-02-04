@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error
 # Load the data
 data = pd.read_csv('/Users/sahibkazimli/Programmering - Projekt och Uppgifter/Car_data.csv')
 
-# Display the first few rows of the data
+# Display the first few rows of the data ghghghghgh
 print(data.head())
 
 # Calculate the correlation coefficient
