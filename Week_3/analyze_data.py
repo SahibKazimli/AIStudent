@@ -14,18 +14,21 @@ conn = db.connect('BingeBlitz.db')
 # SQL query to find the titles consuming the most bandwidth
 query = """
 SELECT
-    t.title,  -- Column 'title' in title_data, not 'title_name'
-    SUM(s.bandwidth) AS total_bandwidth
+    title_data.title,  -- Now using the correct 'title' column
+    SUM(streaming_data.bandwidth) AS total_bandwidth
 FROM
-    streaming_data s
+    streaming_data
 JOIN
-    title_data t ON s.title_id = t.title_id  -- Join streaming_data with title_data
+    title_data ON streaming_data.title_id = title_data.title_id
 GROUP BY
-    t.title  -- Group by the title name to calculate total bandwidth per title
+    title_data.title  -- Grouping by the correct 'title' column
 ORDER BY
-    total_bandwidth DESC  -- Sort the titles by the total bandwidth in descending order
-LIMIT 10;  -- Show only the top 10 titles
+    total_bandwidth DESC
+LIMIT 10;
 """
+
+
+
 
 # Execute the query and fetch the result into a dataframe
 result = conn.execute(query).fetchdf()
