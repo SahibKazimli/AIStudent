@@ -11,6 +11,9 @@ import duckdb
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
+import polars as pl
+import sqlite3 as sql
+
 
 # 1. `streaming_data` - Contains information about the streaming sessions, including `title_id`, `bandwidth`, `time_measured`, `region`, `resolution`, and `device`.
 
@@ -21,6 +24,7 @@ from tqdm import tqdm
 
 # Create a database called BingeBlitz.db
 con = duckdb.connect('BingeBlitz.db')
+
 
 # Add noise to bandwidth amounts
 BANDWIDTH_AMOUNTS = [100, 150, 200, 1000]
