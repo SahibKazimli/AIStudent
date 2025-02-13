@@ -1,6 +1,8 @@
 # Introduction to Machine Learning
 
-We finally arrived to one of the most importants parts of this couse, *Machine Learning*. You probably have heard about it, but what is it? Why is it so famous? Why everyone is talking about it? Well, let's find out!
+We finally arrived to one of the most importants parts of this couse, _Machine Learning_. You probably have heard about it, but what is it? Why is it so famous? Why everyone is talking about it? Well, let's find out!
+
+Slides: [Week 4](./slides/build/main.pdf)
 
 ## What is Machine Learning?
 
@@ -16,9 +18,7 @@ The goal is to train a model $f$ that maps inputs $X$ to outputs $y$, such that
 
 $$y = f(X)$$
 
-Inside Supervised Learning, we have 2 types of problems:
-    - **Classification**: The output variable is a category, such as "spam" or "not spam". Here $y\in\{c_1, c_2, ..., c_n\}$, where $c_i$ is a category, for the spam example $y\in\{"spam", "not spam"\}$.
-    - **Regression**: The output variable is a real value, such as "price" or "weight". Here $y\in\mathbb{R}$.
+Inside Supervised Learning, we have 2 types of problems: - **Classification**: The output variable is a category, such as "spam" or "not spam". Here $y\in\{c_1, c_2, ..., c_n\}$, where $c_i$ is a category, for the spam example $y\in\{"spam", "not spam"\}$. - **Regression**: The output variable is a real value, such as "price" or "weight". Here $y\in\mathbb{R}$.
 
 2. **Unsupervised Learning**: The algorithm learns from unlabeled data, and tries to find patterns in the data. For example, we can use a dataset of houses without prices to find patterns in the data.
 
@@ -34,7 +34,7 @@ As we mentioned before, Machine Learning is all about models learning from data 
 
 First let's load the data, we will use the Heart Disease dataset from the UCI Machine Learning Repository. This dataset contains 303 samples with 13 features each. The goal is to predict whether a patient has heart disease or not. You can find the dataset on Kaggle [here](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset/data).
 
-Your mission is to load the data, preprocess it, and split it into training and test sets. 
+Your mission is to load the data, preprocess it, and split it into training and test sets.
 
 Tasks:
 
@@ -50,7 +50,7 @@ data = pd.read_csv("heart.csv")
 
 3. Identify missing values in the dataset, decide if to remove or fill them.
 
-4. Handle categorical variables. In this dataset, we have a categorical variable called `cp` that represents the chest pain type. 
+4. Handle categorical variables. In this dataset, we have a categorical variable called `cp` that represents the chest pain type.
 
 5. Split the data into training and test sets. You can use the following code:
 
@@ -67,10 +67,9 @@ Note that we split the data into training and test sets. The training set is use
 
 Some additional tasks you can do:
 
-1. Normalize the data. Normalizing the data is important because it can help the model converge faster. 
+1. Normalize the data. Normalizing the data is important because it can help the model converge faster.
 
 2. Create new features. Sometimes creating new features can help the model learn better. For example, you can create a new feature by combining two features.
-
 
 ### Task 2: Training a ML Algorithm for Classification
 
@@ -189,7 +188,7 @@ Scikit-learn is a powerful library that provides simple and efficient tools for 
 
 Your task is to test the following models finding the best one for the dataset. You will use the following models described in the Scikit-learn documentation:
 
-- [Logistic Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) 
+- [Logistic Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 - [Support Vector Machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html)
 - [Decision Tree](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
 - [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
@@ -216,7 +215,7 @@ model_rf = RandomForestClassifier()
 
 ### Task 3: Best Practices for Model Evaluation and Hyperparameter Tuning
 
-In this task, you will learn some best practices for model evaluation and hyperparameter tuning. 
+In this task, you will learn some best practices for model evaluation and hyperparameter tuning.
 
 When training a Machine Learning model, it is important to evaluate the model properly. There are several metrics that can be used to evaluate a model, such as accuracy, precision, recall, F1-score, and ROC-AUC.
 
