@@ -1,4 +1,3 @@
-
 # SQL query to find the titles consuming the most bandwidth
 import duckdb as db
 
