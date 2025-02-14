@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1739429044.84279 "build/main.xdv" "build/main.pdf" "build/main" 1739429045.98448 0
-  "build/main.xdv" 1739429044.7447 402348 421f278636f59ecfdea67bb2fb46c1c3 "xelatex"
+["xdvipdfmx"] 1739459362.51498 "build/main.xdv" "build/main.pdf" "build/main" 1739459363.23547 0
+  "build/main.xdv" 1739459362.45296 402252 59c18608372f12b2149a10f4a2159fa7 "xelatex"
   (generated)
   "build/main.pdf"
   (rewritten before read)
-["xelatex"] 1739429042.65371 "/Users/martinbravodiaz/Desktop/Hobbies/AIStudent/ClassRepo/Week_4/slides/main.tex" "build/main.xdv" "main" 1739429045.9817 0
-  "/Users/martinbravodiaz/Desktop/Hobbies/AIStudent/ClassRepo/Week_4/slides/main.tex" 1739429042.42386 15795 7cf150313d6eb299793c2650e5a7dea6 ""
+["xelatex"] 1739459361.12415 "/Users/martinbravodiaz/Desktop/Hobbies/AIStudent/ClassRepo/Week_4/slides/main.tex" "build/main.xdv" "main" 1739459363.23379 0
+  "/Users/martinbravodiaz/Desktop/Hobbies/AIStudent/ClassRepo/Week_4/slides/main.tex" 1739459360.93274 15787 011c67a95848c9ad887a2875305db094 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -194,10 +194,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1734464405 10850172 2773126de47c2de6ed5d822732b2a7b7 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "build/main.aux" 1739429044.74244 7733 c9481b21a9483da8db75fb34ae8c104f "xelatex"
-  "build/main.nav" 1739429044.74454 4293 c45eaf908b9ec3d78672f4e4ad5d2d4e "xelatex"
-  "build/main.out" 1739429044.74392 1357 5b99bd7bcd598d44e4c55fb493d55edd "xelatex"
-  "build/main.vrb" 1739429044.55707 515 c9eb1848eebb367954cffdfd15569d7e "xelatex"
+  "build/main.aux" 1739459362.45149 7733 c9481b21a9483da8db75fb34ae8c104f "xelatex"
+  "build/main.nav" 1739459362.45277 4293 c45eaf908b9ec3d78672f4e4ad5d2d4e "xelatex"
+  "build/main.out" 1739459362.45253 1357 5b99bd7bcd598d44e4c55fb493d55edd "xelatex"
+  "build/main.vrb" 1739459362.33429 515 c9eb1848eebb367954cffdfd15569d7e "xelatex"
   "imgs/ML.png" 1739292103.89804 40076 5a9b70e634082414ac97508ed20c5134 ""
   "imgs/andrew_ng.png" 1739306373.62252 401617 40b2d44bb8414854bb6f2ec868d99502 ""
   "imgs/clusters.png" 1739292103.90498 54530 325be734a7d6822993fe32d761cc04e9 ""
@@ -205,7 +205,7 @@
   "imgs/perceptron_decision_boundary.png" 1739292103.90612 39525 642e6cba774016317ca10bddc297a5d0 ""
   "imgs/pytorch.jpg" 1739305917.80682 89055 5c7b2b248e4e317fed6b59525826eec7 ""
   "imgs/regression_results.png" 1739292103.90669 17437 f5a88a297817c5c69ebf245aed183b0e ""
-  "main.tex" 1739429042.42386 15795 7cf150313d6eb299793c2650e5a7dea6 ""
+  "main.tex" 1739459360.93274 15787 011c67a95848c9ad887a2875305db094 ""
   (generated)
   "build/main.aux"
   "build/main.log"
