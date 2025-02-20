@@ -5,14 +5,14 @@ Welcome to the AI Society Student course, this course given by old students and 
 
 ## Course Structure
 
-1. [Week 1: Introduction to Python](./Week%201:%20Introduction%20to%20Python/README.md)
-2. [Week 2: Statistics](./Week%202)
-3. [Week 3: Data Wrangling](./Week%203)
-4. [Week 4: Intro to Machine Learning](./Week%204)
-5. [Week 5: Deep Learning](./Week%205)
-6. [Week 6: Big data management](./Week%206)
-7. [Week 7: Web development](./Week%207)
-8. [Week 8: Real life applications](./Week%208)
+1. [Week 1: Introduction to Python](./Week_1)
+2. [Week 2: Statistics](./Week_2)
+3. [Week 3: Data Wrangling](./Week_3)
+4. [Week 4: Intro to Machine Learning](./Week_4)
+5. [Week 5: Deep Learning](./Week_5)
+6. [Week 6: Big data management](./Week_6)
+7. [Week 7: Web development](./Week_7)
+8. [Week 8: Real life applications](./Week_8)
 
 ## Schedule
 1. January 23rd, Thursday 17:30 - 19:30, Room V1
