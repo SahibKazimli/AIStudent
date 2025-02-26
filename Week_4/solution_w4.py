@@ -104,10 +104,10 @@ iris = load_iris()
 X_iris = iris.data
 
 clustering_models = {
-    "KMeans": KMeans(n_clusters=3),
+    "KMeans": KMeans(n_clusters=2),
     "DBSCAN": DBSCAN(eps=0.5, min_samples=5),
     "Agglomerative Clustering": AgglomerativeClustering(n_clusters=3),
-    "Gaussian Mixture Model": GaussianMixture(n_components=3)
+    "Gaussian Mixture Model": GaussianMixture(n_components=2)
 }
 
 for name, model in clustering_models.items():

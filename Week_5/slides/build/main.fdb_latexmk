@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1739920070.49209 "build/main.xdv" "build/main.pdf" "build/main" 1739920083.73792 0
-  "build/main.xdv" 1739920070.37986 429436 ac5af6e583494914a4b3e641c698938f "xelatex"
+["xdvipdfmx"] 1740069133.58537 "build/main.xdv" "build/main.pdf" "build/main" 1740069152.40978 0
+  "build/main.xdv" 1740069133.47029 502288 97b83d6b4e84cc67e402ded702339f44 "xelatex"
   (generated)
   "build/main.pdf"
   (rewritten before read)
-["xelatex"] 1739920067.61452 "/Users/martinbravodiaz/Desktop/Hobbies/AIStudent/ClassRepo/Week_5/slides/main.tex" "build/main.xdv" "main" 1739920083.73512 0
-  "/Users/martinbravodiaz/Desktop/Hobbies/AIStudent/ClassRepo/Week_5/slides/main.tex" 1739920063.56282 14365 a61bfa4586e3881f7e6fc07bbddcd1cd ""
+["xelatex"] 1740069130.56607 "/Users/martinbravodiaz/Documents/AIStudent/ClassRepo/Week_5/slides/main.tex" "build/main.xdv" "main" 1740069152.40699 0
+  "/Users/martinbravodiaz/Documents/AIStudent/ClassRepo/Week_5/slides/main.tex" 1740069130.14506 16509 c144450a93dd9eb25e4da7b189b0f366 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -194,11 +194,16 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1734464405 10850172 2773126de47c2de6ed5d822732b2a7b7 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "build/main.aux" 1739920070.3767 10981 3e4d1f623366dace2c41a5d96b87fe05 "xelatex"
-  "build/main.nav" 1739920070.37966 5160 070732482e4a4efaea91eb48b975f244 "xelatex"
-  "build/main.out" 1739920070.37917 1381 8bb006b7c4b18525cc5a1e167c9c34fd "xelatex"
-  "imgs/kth-logo.png" 1739918933.94421 82608 0ae7972e14d8850d7241412d5b2c6b1a ""
-  "main.tex" 1739920063.56282 14365 a61bfa4586e3881f7e6fc07bbddcd1cd ""
+  "build/main.aux" 1740069133.46718 12384 277edec00ebcf6f66df78d72543cef14 "xelatex"
+  "build/main.nav" 1740069133.47008 5767 717432514449e678a2e698cf023b589b "xelatex"
+  "build/main.out" 1740069133.46966 1285 6ef70a7ff5a46ce8ec316bb2025ea8c9 "xelatex"
+  "cnn.png" 1740068761.3513 327454 b10023111e3772ed49da575103822b77 ""
+  "dl.png" 1740065447.14542 124808 8c2c0ded807ba120a728acbbe7407485 ""
+  "gradient.png" 1740065404.36818 77322 55454987d02d82302822c2c3098e9d3c ""
+  "imgs/kth-logo.png" 1740065543.78239 137299 d43eca4f470cfc031b63f565e58b8fe3 ""
+  "main.tex" 1740069130.14506 16509 c144450a93dd9eb25e4da7b189b0f366 ""
+  "mlp.png" 1740065431.08556 68588 dac7345d35935e5a95a95fdc444b3dcf ""
+  "perceptron.png" 1740065072.75477 24679 caa43c8032fb912673357300fd3c4bf9 ""
   (generated)
   "build/main.aux"
   "build/main.log"
