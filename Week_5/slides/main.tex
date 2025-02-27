@@ -1,0 +1,489 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\addtobeamertemplate{frametitle}{}{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east, xshift=-0.5cm, yshift=-0.1cm] at (current page.north east) {
+            \includegraphics[width=1.5cm]{imgs/kth-logo.png}
+        };
+    \end{tikzpicture}
+}
+
+\title{Lecture: Deep Learning Fundamentals}
+\author{KTH AI Student}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Introduction}
+\begin{frame}{What we will cover today}
+    \begin{itemize}
+        \item History of Deep Learning.
+        \item Fundamentals of a Perceptron.
+        \item Understanding and Implementing Gradient Descent.
+        \item Introduction to Autograd and Backpropagation.
+        \item Training a Multilayer Perceptron (MLP).
+        \item Deep Dive into Convolutional Neural Networks (CNNs).
+    \end{itemize}
+\end{frame}
+
+\section{History of Deep Learning}
+\begin{frame}{Early Beginnings}
+    \begin{itemize}
+        \item 1943: McCulloch and Pitts propose the first mathematical model of a neuron.
+        \item 1958: Rosenblatt introduces the Perceptron, an early neural network.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{First AI Winter}
+    \begin{itemize}
+        \item 1970s: AI research faces criticism and reduced funding.
+        \item Limitations of Perceptrons highlighted by Minsky and Papert.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Revival and Second AI Winter}
+    \begin{itemize}
+        \item 1980s: Backpropagation algorithm popularized by Rumelhart, Hinton, and Williams.
+        \item 1990s: AI research faces another decline due to unmet expectations.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Milestones in AI}
+    \begin{itemize}
+        \item 1997: IBM's Deep Blue defeats world chess champion Garry Kasparov.
+        \item 2006: Hinton and colleagues introduce deep belief networks, sparking renewed interest in deep learning.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Modern Deep Learning Era}
+    \begin{itemize}
+        \item 2012: AlexNet wins ImageNet competition, demonstrating the power of deep convolutional networks.
+        \item 2014: GANs introduced by Goodfellow et al., enabling generative models.
+        \item 2017: Transformers introduced by Vaswani et al., revolutionizing NLP.
+        \item 2023: Large language models (LLMs) like GPT-3 and BERT achieve human-level performance on various tasks.
+    \end{itemize}
+\end{frame}
+
+\section{Linear Regression}
+\begin{frame}{What is Linear Regression?}
+    \begin{itemize}
+        \item Linear regression is a simple model used to predict continuous values.
+        \item It assumes a linear relationship between input features and output.
+        \item The model is represented as:
+        \[
+        y = wx + b
+        \]
+        \item Where \(y\) is the output, \(x\) is the input, \(w\) is the weight, and \(b\) is the bias.
+    \end{itemize}
+\end{frame}
+
+\section{Perceptron and Gradient Descent}
+\begin{frame}{What is a Perceptron?}
+    \begin{itemize}
+        \item A Perceptron is a simple neural network unit.
+        \item It takes input features, applies weights, and produces an output.
+        \item The output is passed through an activation function.
+        \item The equation for a simple linear model is:
+        \[
+        y = wx + b
+        \]
+        \item Then we apply an activation function to \(y\).
+        \item Example: Sigmoid, ReLU, Tanh.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Perceptron Example}
+    \begin{itemize}
+        \item Consider a Perceptron with one input feature.
+        \item Weights: \(w = 2\), bias: \(b = 1\).
+        \item Input: \(x = 3\).
+        \item Output: \(y = 2 \times 3 + 1 = 7\).
+        \item Apply ReLU activation: \(f(y) = \max(0, y) = 7\).
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Perceptron}
+    \begin{figure}
+        \centering
+\includegraphics[width=0.7\textwidth]{perceptron.png}
+        \caption{Perceptron}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Linear Regression Assumptions}
+    \begin{itemize}
+        \item Linearity: The relationship between dependent and independent variables is linear.
+        \item Independence: Observations are independent of each other.
+        \item Homoscedasticity: Constant variance of residuals.
+        \item Normality: Residuals should be normally distributed.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{How can we learn non-linear relationships?}
+    \begin{itemize}
+        \item We can use \textbf{Multilayer Perceptrons (MLPs)}.
+        \item MLPs consist of multiple layers of neurons.
+        \item Hidden layers introduce non-linearity.
+        \item Activation functions like ReLU are used to introduce non-linearity.
+    \end{itemize}
+\end{frame}
+
+
+\section{Multilayer Perceptron (MLP)}
+\begin{frame}{What is an MLP?}
+    \begin{itemize}
+        \item A \textbf{Multilayer Perceptron (MLP)} consists of multiple layers of neurons.
+        \item It includes an \textbf{input layer, hidden layers, and an output layer}.
+        \item Uses \textbf{activation functions} to introduce non-linearity.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Common Activation Functions}
+    \begin{itemize}
+        \item \textbf{Sigmoid:} Used in binary classification problems.
+        \[
+        \sigma(x) = \frac{1}{1 + e^{-x}}
+        \]
+        \item \textbf{ReLU (Rectified Linear Unit):}
+        \[
+        f(x) = \max(0, x)
+        \]
+        \item \textbf{Tanh:} Scales input to range \([-1, 1]\).
+        \[
+        \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{mlp.png}
+        \caption{Multilayer Perceptron}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{MLP Architecture}
+    \begin{itemize}
+        \item Input layer: Receives input features.
+        \item Hidden layers: Perform computations and transformations.
+        \item Output layer: Produces final predictions.
+        \item Example: MLP for digit classification.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Training an MLP}
+    \begin{itemize}
+        \item Initialize weights and biases.
+        \item Forward pass: Compute predictions.
+        \item Compute loss: Measure prediction error.
+        \item Backward pass: Compute gradients.
+        \item Update weights: Apply gradient descent.
+        \item Repeat until convergence.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Loss Functions}
+    \begin{itemize}
+        \item \textbf{Mean Squared Error (MSE):} Used for regression problems.
+        \[
+        \text{MSE} = \frac{1}{N} \sum (y_i - \hat{y}_i)^2
+        \]
+        \item \textbf{Cross-Entropy Loss:} Used for classification problems.
+        \[
+        \text{Cross-Entropy} = -\frac{1}{N} \sum y_i \log(\hat{y}_i)
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Gradient Descent Algorithm}
+    \begin{itemize}
+        \item An optimization technique used to minimize the loss function.
+        \item The parameter updates are:
+        \[
+        w := w - \alpha \frac{\partial \text{MSE}}{\partial w}
+        \]
+        \[
+        b := b - \alpha \frac{\partial \text{MSE}}{\partial b}
+        \]
+        \item \(\alpha\) is the learning rate, which controls step size.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Gradient Descent Algorithm}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{gradient.png}
+        \caption{Gradient Descent}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Challenges in Gradient Descent}
+    \begin{itemize}
+        \item Choosing the correct learning rate is critical.
+        \item Too small \(\alpha\) results in slow convergence.
+        \item Too large \(\alpha\) may cause divergence.
+        \item Local minima vs. global minima.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Variants of Gradient Descent}
+    \begin{itemize}
+        \item \textbf{Batch Gradient Descent:} Uses the entire dataset to compute gradients.
+        \item \textbf{Stochastic Gradient Descent (SGD):} Uses one sample at a time.
+        \item \textbf{Mini-batch Gradient Descent:} Uses a subset of the dataset.
+        \item \textbf{Momentum:} Accelerates convergence by considering past gradients.
+        \item \textbf{Adam:} Adaptive learning rate method combining momentum and RMSProp.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mathematical Derivation of Gradient Descent}
+    \begin{itemize}
+        \item The gradient of MSE with respect to \(w\) is:
+        \[
+        \frac{\partial \text{MSE}}{\partial w} = -\frac{2}{N} \sum x_i (y_i - (wx_i + b))
+        \]
+        \item The gradient of MSE with respect to \(b\) is:
+        \[
+        \frac{\partial \text{MSE}}{\partial b} = -\frac{2}{N} \sum (y_i - (wx_i + b))
+        \]
+        \item Update rules:
+        \[
+        w := w - \alpha \left( -\frac{2}{N} \sum x_i (y_i - (wx_i + b)) \right)
+        \]
+        \[
+        b := b - \alpha \left( -\frac{2}{N} \sum (y_i - (wx_i + b)) \right)
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Backpropagation: The Core of Neural Networks}
+    \begin{itemize}
+        \item Backpropagation is used to adjust weights to minimize loss.
+        \item Steps:
+        \begin{enumerate}
+            \item Compute forward pass (prediction).
+            \item Calculate loss function.
+            \item Compute gradients of loss with respect to parameters.
+            \item Update weights using gradient descent.
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Chain Rule in Backpropagation}
+    \begin{itemize}
+        \item The derivative of a composite function:
+        \[
+        \frac{df}{dx} = \frac{df}{du} \times \frac{du}{dx}
+        \]
+        \item Used to efficiently propagate gradients in deep networks.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example of Backpropagation}
+    \begin{itemize}
+        \item Consider a simple neural network with one hidden layer.
+        \item Forward pass:
+        \[
+        z_1 = w_1 x + b_1
+        \]
+        \[
+        a_1 = \sigma(z_1)
+        \]
+        \[
+        z_2 = w_2 a_1 + b_2
+        \]
+        \[
+        \hat{y} = \sigma(z_2)
+        \]
+        \item Loss function:
+        \[
+        L = \frac{1}{2} (\hat{y} - y)^2
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Backpropagation Steps}
+    \begin{itemize}
+        \item Compute gradients:
+        \[
+        \frac{\partial L}{\partial \hat{y}} = \hat{y} - y
+        \]
+        \[
+        \frac{\partial \hat{y}}{\partial z_2} = \sigma'(z_2)
+        \]
+        \[
+        \frac{\partial z_2}{\partial w_2} = a_1
+        \]
+        \item Chain rule:
+        \[
+        \frac{\partial L}{\partial w_2} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z_2} \cdot \frac{\partial z_2}{\partial w_2}
+        \]
+        \item Update weights:
+        \[
+        w_2 := w_2 - \alpha \frac{\partial L}{\partial w_2}
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Regularization Techniques}
+    \begin{itemize}
+        \item \textbf{L2 Regularization:} Adds penalty for large weights.
+        \[
+        L = \text{MSE} + \lambda \sum w^2
+        \]
+        \item \textbf{Dropout:} Randomly drops neurons during training.
+        \item \textbf{Early Stopping:} Stops training when validation loss increases.
+    \end{itemize}
+\end{frame}
+
+\section{Convolutional Neural Networks (CNNs)}
+\begin{frame}{What is a CNN?}
+    \begin{itemize}
+        \item CNNs are specialized for image recognition and processing.
+        \item Use \textbf{convolutional layers} to extract important features.
+        \item Pooling layers reduce dimensionality while retaining information.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Convolutional Layers}
+    \begin{itemize}
+        \item Apply filters (kernels) to detect features like edges.
+        \item Example: Using a \textbf{3x3 kernel} for edge detection.
+        \item Convolution operation:
+        \[
+        (I * K)(i, j) = \sum_m \sum_n I(i+m, j+n) K(m, n)
+        \]
+        \item Where \(I\) is the input image and \(K\) is the kernel.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pooling Layers}
+    \begin{itemize}
+        \item Reduce the size of feature maps while preserving important features.
+        \item \textbf{Max pooling} selects the highest value in a region.
+        \item \textbf{Average pooling} computes the average value in a region.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Fully Connected Layer}
+    \begin{itemize}
+        \item After convolution and pooling, a fully connected layer is used for classification.
+        \item Example: Final layer in \textbf{image classification} predicts categories.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{CNN Architecture}
+    \begin{itemize}
+        \item Input layer: Receives image data.
+        \item Convolutional layers: Extract features.
+        \item Pooling layers: Reduce dimensionality.
+        \item Fully connected layers: Perform classification.
+        \item Example: LeNet-5 for digit recognition.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Training a CNN}
+    \begin{itemize}
+        \item Initialize filters and weights.
+        \item Forward pass: Compute feature maps and predictions.
+        \item Compute loss: Measure prediction error.
+        \item Backward pass: Compute gradients.
+        \item Update weights: Apply gradient descent.
+        \item Repeat until convergence.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{CNN}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth]{cnn.png}
+        \caption{Convolutional Neural Network}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Data Augmentation}
+    \begin{itemize}
+        \item Technique to increase the diversity of training data.
+        \item Examples: Rotation, scaling, flipping, and cropping.
+        \item Helps prevent overfitting and improves generalization.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Transfer Learning}
+    \begin{itemize}
+        \item Use pre-trained models on large datasets.
+        \item Fine-tune the model on a specific task.
+        \item Example: Using VGG16 for image classification.
+    \end{itemize}
+\end{frame}
+
+\section{Current Architectures}
+\begin{frame}{Recurrent Neural Networks (RNNs)}
+    \begin{itemize}
+        \item Designed for sequential data.
+        \item Maintain hidden states to capture temporal dependencies.
+        \item Applications: Time series prediction, language modeling.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Long Short-Term Memory (LSTM)}
+    \begin{itemize}
+        \item A type of RNN designed to handle long-term dependencies.
+        \item Uses gates to control the flow of information.
+        \item Applications: Speech recognition, text generation.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Generative Adversarial Networks (GANs)}
+    \begin{itemize}
+        \item Consist of a generator and a discriminator.
+        \item Generator creates fake data, discriminator distinguishes real from fake.
+        \item Applications: Image generation, data augmentation.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Transformers}
+    \begin{itemize}
+        \item Use self-attention mechanisms to process sequences in parallel.
+        \item Revolutionized NLP tasks.
+        \item Applications: Machine translation, text summarization.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Large Language Models (LLMs)}
+    \begin{itemize}
+        \item Built on transformer architecture.
+        \item Trained on vast amounts of text data.
+        \item Applications: Chatbots, content generation, question answering.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Resources}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{dl.png}
+        \caption{Resources}
+    \end{figure}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}{Summary}
+    \begin{itemize}
+        \item \textbf{Linear Regression} is a fundamental prediction method.
+        \item \textbf{Gradient Descent} optimizes model parameters.
+        \item \textbf{Autograd} automates differentiation for neural networks.
+        \item \textbf{MLPs} introduce complexity beyond linear models.
+        \item \textbf{CNNs} excel in image-related tasks.
+        \item \textbf{RNNs, LSTMs, GANs, Transformers, and LLMs} represent current advancements in deep learning.
+    \end{itemize}
+\end{frame}
+
+\end{document}
