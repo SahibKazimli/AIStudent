@@ -1,3 +1,4 @@
+from tqdm import tqdm
 import modal
 import modal.runner
 import pandas as pd
@@ -16,7 +17,7 @@ def batch_infer(df, inputs, batch_size=8, device="cuda"):
     rest_embeds = df.loc[~df.title.isin(inputs[0])].embed.tolist()
     rest_embeds = torch.tensor(rest_embeds).to(device)
     sim = []
-    for i in range(0, len(embeds), batch_size):
+    for i in tqdm(range(0, len(embeds), batch_size)):
         batch_similarity = batch_similarity = F.cosine_similarity(
             embeds[i : i + batch_size].unsqueeze(1),
             rest_embeds.unsqueeze(0),
