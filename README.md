@@ -29,5 +29,6 @@ The video recording is unfortunately missing sound but it will be fixed for next
 6. February 28th, Thursday 17:30 - 19:30, Room V1
 
 7. March 20th, Thursday 17:30 - 19:30, Room V1
-8. March 27th, Thursday 17:30 - 19:30, Room V1
+[Video recording](https://drive.google.com/file/d/1UVYJPqm5_5bCiNxl2l6PoE9CgieEzsQc/view?usp=sharing)
+9. March 27th, Thursday 17:30 - 19:30, Room V1
 
