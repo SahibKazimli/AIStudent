@@ -23,9 +23,13 @@ The video recording is unfortunately missing sound but it will be fixed for next
 3. February 6th, Thursday 17:30 - 19:30, Room V1
 [Video recording](https://drive.google.com/file/d/1hzUHHiRbxsS1hx7XDvcsysTQkqhZ0xZ6/view?usp=sharing)
 4. February 13th, Thursday 17:30 - 19:30, Room V1
+[Video recording](https://drive.google.com/file/d/1F-9pmiMgjeiJ9_-wMY7i9wrKldQpSVwr/view?usp=sharing)
 5. February 20th, Thursday 17:30 - 19:30, Room V1
+[Video recording](https://drive.google.com/file/d/1BNlfeUzznGwxxqCnyE-TVqgnNA8QbNZE/view?usp=sharing)
 6. February 28th, Thursday 17:30 - 19:30, Room V1
 
 7. March 20th, Thursday 17:30 - 19:30, Room V1
+[Video recording](https://drive.google.com/file/d/1UVYJPqm5_5bCiNxl2l6PoE9CgieEzsQc/view?usp=sharing)
 8. March 27th, Thursday 17:30 - 19:30, Room V1
+[Video recording](https://drive.google.com/file/d/1qElyqqaVzEWkDUOkobC8eqS3vkAYA3gY/view?usp=sharing)
 
